@@ -10,9 +10,12 @@ def landing_Page():
 def home_page():
     return render_template("home.html")
 
-@app.route("/input")
-def input():
-    return "<p>Output</p>"
+@app.route("/predict",methods=["POST"])
+def prediction():
+    if request.method == "POST":
+        print(request.form)
+        
+    return render_template("output.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

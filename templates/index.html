@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FITAI Landing Page</title>
+    <!-- <meta http-equiv="refresh" content="5; url={{ url_for('home_page') }}" /> -->
+    <title>FITAI</title>
     <link rel="stylesheet" href="../static/styles/index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Teko">
 </head>
 <body>
     <img src="../static/img/FITAI.png" alt="FITAI Logo">  
     <p>Shape Your Fitness Future: Let FITAI Design Your Ideal Workout Plan with Just a Few Words!</p>
+    <button><a href="{{ url_for('home_page') }}" class="button">Get Started</a></button>
 </body>
 </html>
