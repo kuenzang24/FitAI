@@ -1,0 +1,19 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Teko';
+  src: url('teko-regular.woff2') format('woff2'),
+       url('teko-regular.woff') format('woff');
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+img{
+  margin-top: 250px;
+}
+  
+  p {
+    font-size: 1.5em;
+    line-height: 1.2;
+  }
