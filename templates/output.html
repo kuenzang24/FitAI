@@ -1,59 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FITAI Landing Page</title>
-    <link rel="stylesheet" href="../static/styles/output.css">
+  <link rel="stylesheet" type="text/css" href="../static/styles/output.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Teko">
 </head>
 
 <body>
-    <div class="header">
-        <img src="../static/img/FITAI.png" alt="FITAI Logo" id="logo">
+
+  <h1>EXERCISE RECOMMENDED</h1>
+
+  <div class="container">
+    <div class="image">
+      <img src="../static/img/pexels-tima-miroshnichenko-6389075.jpg" alt="Image" class="img">
     </div>
-    <div>
-        <p>{{ value }}</p>
+    <div class="list">
+      <div class="list-item" id="exercise-list">
+        {% for e in value %}
+          <div class="list-item" style="color: white;">
+            <p>{{e}}</p>
+          </div>
+        {% endfor %}
+      </div>
     </div>
-    <div class="container">
-        <h1>Give Your Exact Information</h1>
-        <form>
-            <div class="image-button" id="image-button">
-                <label for="workout-selection">Select Workout</label>
-                <img src="workout-icon.jpg" alt="Workout Selection">
-            </div>
-            <div class="workout-options" id="workout-options">
-                <ul>
-                    <li>Full Body Blast</li>
-                    <li>Upper Body Strength</li>
-                    <li>Lower Body Power</li>
-                    <li>Core Conditioning</li>
-                </ul>
-            </div>
-            <div class="input-group">
-                <label for="age">Age</label>
-                <input type="number" id="age" name="age" min="12">
-            </div>
-            <div class="input-group">
-                <label for="weight">Weight</label>
-                <input type="number" id="weight" name="weight" min="0">
-                <select name="weight-unit" id="weight-unit">
-                    <option value="lbs">LBS</option>
-                    <option value="kg">KG</option>
-                </select>
-            </div>
-            <div class="input-group">
-                <label for="height">Height</label>
-                <input type="number" id="height" name="height" min="0">
-                <select name="height-unit" id="height-unit">
-                    <option value="ft">Ft</option>
-                    <option value="cm">Cm</option>
-                </select>
-            </div>
-            <button type="submit">Generate</button>
-        </form>
-    </div>
-    <script src="script.js"></script>
+  </div>
+
+  <!-- <script src="../static/javascript/output.js"></script> -->
 </body>
 
 </html>

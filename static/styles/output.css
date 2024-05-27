@@ -1,72 +1,58 @@
 body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #eee;
-  }
-  
-  .header {
-    padding: 20px 0;
-  }
-  
-  .container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-  }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .image-button {
-    cursor: pointer;
-    position: relative;
-  }
-  
-  .image-button img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .workout-options {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    display: none;
-  }
-  
-  .workout-options ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .workout-options li {
-    margin-bottom: 5px;
-  }
-  
-  .workout-options li:hover {
-    background-color: #eee;
-  }
-  
-  .input-group {
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .input-group label {
-    flex: 0 0 100px;
-    margin-right: 10px;
-  }  
+  background-color: black;
+  color: white;
+  font-family: 'Teko';
+  src: url('teko-regular.woff2') format('woff2'),
+       url('teko-regular.woff') format('woff');
+
+}
+
+.container {
+  display: flex;
+}
+
+.image {
+  width: 30%;
+  text-align: center;
+  display: flex;
+  align-items: flex-start;
+}
+.img{
+  height: 600px;
+  margin-left: -500px;
+  margin-left: 100px;
+}
+.logo {
+  width: 100px;
+  height: auto;
+  margin-top: -80px;
+  margin-left: 10px;
+}
+
+.list {
+  width: 40%;
+  padding: 50px;
+  margin-left: 250px;
+  list-style-type: none;
+}
+
+.list-item {
+  background-color: #000000;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #0ABAB5;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.list-item:hover {
+  background-color: #0ABAB5;
+
+}

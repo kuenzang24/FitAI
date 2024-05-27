@@ -134,8 +134,8 @@ def prediction():
         X = pd.DataFrame(x_sample,columns=cols)
         result = model.predict(X)
         workout = Get_exercise(result)
-
-    return render_template("output.html",value=workout) 
+        
+        return render_template("output.html",value=workout) 
 
 if __name__ == "__main__":
     app.run(debug=True)

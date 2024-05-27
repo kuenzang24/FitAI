@@ -1,24 +1,133 @@
-/* body {
-  background-color: black;
-  color: white;
-  font-family: "Teko";
-  src: url("teko-regular.woff2") format("woff2"),
-    url("teko-regular.woff") format("woff");
-  margin: 0;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #111317;
+  --secondary-color: #f9ac54;
+  --secondary-color-dark: #d79447;
+  --text-light: #d1d5db;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+* {
   padding: 0;
-  text-align: center;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-img {
-  margin-top: 250px;
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--primary-color);
+  background: url('../img/index.png') no-repeat center center fixed;
+  background-size: cover;
+  color: var(--white);
 }
 
-p {
-  font-size: 1.5em;
-  line-height: 1.2;
+.Logo{
+  margin: 30px;
+  margin-left: 50px;
 }
 
-a {
-  text-decoration: none;
-  color: black;
+/* .section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  outline: none;
+  border: 2px solid var(--white);
+  font-size: 1rem;
+  color: var(--white);
+  background-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: rgb(0, 0, 0);
+}
+
+.nav__logo {
+  max-width: 150px;
+}
+
+.header__container {
+    position: relative;
+    padding-top: 6rem; 
+    padding-bottom: 2rem; 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+  
+
+.header__container::before {
+  content: "FITNESS";
+  position: absolute;
+  bottom: 5rem;
+  right: 20rem;
+  font-size: 10rem;
+  font-weight: 700;
+  line-height: 7rem;
+  color: var(--white);
+  opacity: 0.05;
+  z-index: -1;
+}
+
+.header__content {
+  position: relative;
+  z-index: 2;
+}
+
+.header__content h4 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.header__content h1 {
+  margin-bottom: 1rem;
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 6rem;
+  color: var(--white);
+}
+
+.header__content h1 span {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px var(--white);
+}
+
+.header__content p {
+  margin-bottom: 2rem;
+  color: var(--text-light);
+}
+
+.bg__blur {
+  position: absolute;
+  box-shadow: 0 0 1000px 50px var(--secondary-color);
+  z-index: -1;
+}
+
+.header__blur {
+  bottom: 5rem;
+  right: 0;
+}
+
+@media (max-width: 900px) {
+  .header__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .header__container::before {
+    bottom: 3rem;
+    right: 10rem;
+    font-size: 6rem;
+    line-height: 4rem;
+  }
 } */

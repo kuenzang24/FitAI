@@ -1,98 +1,98 @@
+/* body {
+  font-family: "Teko";
+  src: url("teko-regular.woff2") format("woff2"),
+    url("teko-regular.woff") format("woff");
+} */
 
-body {
-    background-color: black;
-    font-family: 'Teko';
-  src: url('teko-regular.woff2') format('woff2'),
-       url('teko-regular.woff') format('woff');
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+body{
+  height: 100vh;
+  background-color: black;
+}
 
-  }
-  
-  .header {
-    margin-top: 50px;
-    padding: 20px 0;
-  }
-  
-  .container {
-   margin-top: 60px;
-   margin-left: 50px;
-    color: #ffff;
-    padding: 10px;
-    padding-right: 90px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    align-items: center;
-    width: 400px;
- 
-  }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .dropdown {
-    margin-bottom: 15px;
-  }
-  
-  .dropdown label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .dropdown select {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-  }
-  
-  .input-group {
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .input-group label {
-    flex: 0 0 100px;
-    
-    margin-bottom: 5px;
-  }
-  
-  .input-group input,
-  .input-group select {
-    flex: 1;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-   
-   
-  }
-  .input-group select{
-    background-color: #0ABAB5;
-    margin-top: 5px;
-    width: 50px;
-  }
-  .input-group input {
-    margin-top: -80px;
-  }
-  button {
-    background-color: #0ABAB5;
-    color: #fff;
-    padding: 10px 60px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 50px;
-    margin-left: 120px;
-  }
-  
-  button:hover {
-    background-color: #0067cc;
-  }
-  
+h1 {
+  text-align: center;
+  color: white;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group select {
+  background-color: #0abab5;
+  margin-top: 5px;
+  width: 50px;
+}
+
+.input-group label {
+  color: white;
+}
+
+.dropdown {
+  margin-bottom: 15px;
+}
+
+.dropdown label {
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.dropdown select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.input-group input,
+.input-group select {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #0abab5;
+  color: black;
+  padding: 10px 60px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 50px;
+  /* margin-left: 120px; */
+}
+
+button:hover {
+  background-color: #0067cc;
+}
+
+.card {
+  display: none;
+  /* transform: translateX(200%); */
+  /* opacity: 0; */
+  /* transition: 500ms ease-in-out; */
+  /* position: absolute; */
+}
+
+.card.active {
+  /* position: static; */
+  display: block;
+  /* transform: translateX(0); */
+  /* opacity: 1; */
+}
+
+/* .multi-step-form {
+  overflow: hidden;
+  position: relative;
+  height: 300px;
+} */

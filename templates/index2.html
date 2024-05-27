@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/styles/index.css" /> -->
+  <title>FITAI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            lightBlue: "#1355ff",
+            darkBlue: "#0047ff",
+            back: "#dde7fe"
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="w-screen h-screen bg-back">
+  <div class="flex justify-center items-center py-5 border-b-2 border-darkBlue">
+    <header>
+      <h1 class="text-6xl font-semibold text-lightBlue">FITAI</h1>
+    </header>
+  </div>
+
+  <div class="flex justify-between pl-5">
+    <div class="flex gap-10 ml-5">
+      <div class="py-3 text-lightBlue text-xl"><a href="home">Home</a></div>
+      <div class="py-3 text-lightBlue text-xl">About</div>
+    </div>
+    <div class="bg-darkBlue py-3 px-10 text-white font-medium"><a href="home">Get Started</a></div>
+  </div>
+
+  <div class="flex justify-center items-center my-10">
+    <div class="text-center">
+      <div>
+        <h1 class="text-xl text-lightBlue">Change Your Life</h1>
+      </div>
+      <div class="text-center">
+        <h1 class="text-6xl text-darkBlue tracking-wide">Get Fit Now</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex">
+    <div class="w-full object-cover border-2 border-darkBlue rounded-bl-lg"><img src="../static/img/w4.jpg" alt="Workout img 1"></div>
+    <div class="w-full object-cover border-y-2 border-darkBlue"><img src="../static/img/w5.jpg" alt="Workout img 2"></div>
+    <div class="w-full object-cover border-2 border-darkBlue rounded-br-lg"><img src="../static/img/w6.jpg" alt="Workout img 3"></div>
+  </div>
+</body>
+
+</html>
