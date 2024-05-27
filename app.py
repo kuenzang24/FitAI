@@ -5,6 +5,7 @@ from joblib import load
 app = Flask(__name__)
 model = load("fitai_model.pkl")
 
+# Array
 cols = [
     'Age', 
     'Gender', 
@@ -73,6 +74,7 @@ exercises = [
     "Yoga"
 ]
 
+# Utility Function 
 def calculate_bmi(weight, height):
     # Convert height from cm to m
     height_in_meters = height / 100
@@ -83,8 +85,9 @@ def Get_exercise(arr):
     output = arr.tolist()[0]
     exercises_indices = [i for i, x in enumerate(output) if x == 1]
     filtered_exercises = [exercises[i] for i in exercises_indices]
-    print(filtered_exercises)
+    return filtered_exercises
 
+# Routes
 @app.route("/")
 def landing_Page():
     return render_template("index.html")
@@ -130,10 +133,9 @@ def prediction():
         x_sample = [[Age,Gender,Height,Weight,BMI,FitnessLevel,MedicalConditions,Injuries,FitnessGoals,ExerciseFrequency,ExerciseDuration,PreferredTimeOfDay,PreferredEnvironment,ActivityLevel,DietaryPreferences,SleepPatterns,MotivationLevel,StressLevel,ExerciseHistory,WeatherConditions,GymMembership,SupportSystem,GroupClassesPreference]]
         X = pd.DataFrame(x_sample,columns=cols)
         result = model.predict(X)
+        workout = Get_exercise(result)
 
-        Get_exercise(result)
-
-    return render_template("output.html") 
+    return render_template("output.html",value=workout) 
 
 if __name__ == "__main__":
     app.run(debug=True)
