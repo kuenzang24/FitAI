@@ -1,9 +1,9 @@
-import pickle
 import pandas as pd
 from flask import Flask,render_template,request
+from joblib import load
 
 app = Flask(__name__)
-model = pickle.load(open("fitai_model.pkl","rb"))
+model = load("fitai_model.pkl")
 
 cols = [
     'Age', 
@@ -31,11 +31,59 @@ cols = [
     'GroupClassesPreference'
 ]
 
+exercises = [
+    "Air Squats",
+    "Arm Circles",
+    "Assisted Pistol Squats",
+    "Bird Dogs",
+    "Bodyweight Squats",
+    "Brisk Walking",
+    "Bulgarian Split Squats",
+    "Burpees",
+    "Chair Squats",
+    "Cycling",
+    "Dips",
+    "Dumbbell Rows",
+    "Elevated Pike Pushups",
+    "Glute Bridges",
+    "HIIT",
+    "Incline Push-Ups",
+    "Jogging",
+    "Jumping Jacks",
+    "Lunges",
+    "Marching on the Spot",
+    "Modified Plank",
+    "Modified Wall Push-Ups",
+    "Pilates",
+    "Plank",
+    "Push-Ups",
+    "Reverse Lunges",
+    "Running",
+    "Seated Leg Lifts",
+    "Seated Rowing",
+    "Side Leg Lifts",
+    "Sliding Leg Curl",
+    "Step-ups",
+    "Supermans",
+    "Swimming",
+    "Tricep Dips on Chair",
+    "Walking Lunges",
+    "Wall Push-Ups",
+    "Water Bottle Bicep Curls",
+    "Yoga"
+]
+
 def calculate_bmi(weight, height):
     # Convert height from cm to m
     height_in_meters = height / 100
     bmi = weight / (height_in_meters ** 2)
     return bmi
+
+def Get_exercise(arr):
+    output = arr.tolist()[0]
+    exercises_indices = [i for i, x in enumerate(output) if x == 1]
+    filtered_exercises = [exercises[i] for i in exercises_indices]
+    print(filtered_exercises)
 
 @app.route("/")
 def landing_Page():
@@ -49,41 +97,41 @@ def home_page():
 def prediction():
     if request.method == "POST":
         Age = int(request.form['Age'])
-        Gender = request.form['Gender'] #Checking the option spelling 
-        Height = float(request.form['Height'])
+        Gender = request.form['Gender'] 
+        Height = int(request.form['Height'])
 
-        Weight = float(request.form['Weight'])
+        Weight = int(request.form['Weight'])
         BMI = calculate_bmi(Weight, Height)
-        FitnessLevel = request.form['FitnessLevel'] #Checking the option spelling 
+        FitnessLevel = request.form['FitnessLevel'] 
         
-        MedicalConditions = request.form['MedicalConditions'] #Checking the option spelling 
-        Injuries = request.form['Injuries'] #Checking the option spelling 
-        FitnessGoals = request.form['FitnessGoals'] #Checking the option spelling 
+        MedicalConditions = request.form['MedicalConditions'] 
+        Injuries = request.form['Injuries'] 
+        FitnessGoals = request.form['FitnessGoals'] 
         
-        ExerciseFrequency = float(request.form['ExerciseFrequency'])
-        ExerciseDuration = request.form['ExerciseDuration'] #Checking the option spelling 
-        PreferredTimeOfDay = float(request.form['PreferredTimeOfDay'])
+        ExerciseFrequency = int(request.form['ExerciseFrequency'])
+        ExerciseDuration = int(request.form['ExerciseDuration']) 
+        PreferredTimeOfDay = request.form['PreferredTimeOfDay']
         
-        PreferredEnvironment = request.form['PreferredEnvironment'] #Checking the option spelling 
-        ActivityLevel = request.form['ActivityLevel'] #Checking the option spelling 
-        DietaryPreferences = request.form['DietaryPreferences'] #Checking the option spelling 
+        PreferredEnvironment = request.form['PreferredEnvironment'] 
+        ActivityLevel = request.form['ActivityLevel'] 
+        DietaryPreferences = request.form['DietaryPreferences'] 
         
-        SleepPatterns = float(request.form['SleepPatterns']) #Checking the option spelling 
-        MotivationLevel = request.form['MotivationLevel'] #Checking the option spelling 
-        StressLevel = request.form['StressLevel'] #Checking the option spelling 
+        SleepPatterns = float(request.form['SleepPatterns']) 
+        MotivationLevel = request.form['MotivationLevel'] 
+        StressLevel = request.form['StressLevel'] 
         
-        ExerciseHistory = request.form['ExerciseHistory'] #Checking the option spelling  
-        WeatherConditions = request.form['WeatherConditions'] #Checking the option spelling 
+        ExerciseHistory = request.form['ExerciseHistory'] 
+        WeatherConditions = request.form['WeatherConditions']  
         GymMembership = request.form['GymMembership']
         
         SupportSystem = request.form['SupportSystem']
         GroupClassesPreference = request.form['GroupClassesPreference']
-
          
         x_sample = [[Age,Gender,Height,Weight,BMI,FitnessLevel,MedicalConditions,Injuries,FitnessGoals,ExerciseFrequency,ExerciseDuration,PreferredTimeOfDay,PreferredEnvironment,ActivityLevel,DietaryPreferences,SleepPatterns,MotivationLevel,StressLevel,ExerciseHistory,WeatherConditions,GymMembership,SupportSystem,GroupClassesPreference]]
         X = pd.DataFrame(x_sample,columns=cols)
         result = model.predict(X)
-        print(result)
+
+        Get_exercise(result)
 
     return render_template("output.html") 
 
