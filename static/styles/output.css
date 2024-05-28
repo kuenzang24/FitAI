@@ -1,6 +1,6 @@
 body {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   font-family: 'Teko';
   src: url('teko-regular.woff2') format('woff2'),
        url('teko-regular.woff') format('woff');
@@ -37,22 +37,16 @@ body {
 }
 
 .list-item {
-  background-color: #000000;
+  background-color: white;
   margin: 10px 0;
   padding: 10px;
-  border: 1px solid #0ABAB5;
+  border: 1px solid black;
   border-radius: 4px;
   transition: background-color 0.3s ease;
-
   text-align: center;
 }
 
 h1 {
   text-align: center;
   margin-top: 40px;
-}
-
-.list-item:hover {
-  background-color: #0ABAB5;
-
 }
