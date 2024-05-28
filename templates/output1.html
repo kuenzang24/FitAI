@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="../static/styles/output.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Teko">
+</head>
+
+<body>
+
+  <h1>EXERCISE RECOMMENDED</h1>
+
+  <div class="container">
+    <div class="image">
+      <img src="../static/img/pexels-tima-miroshnichenko-6389075.jpg" alt="Image" class="img">
+    </div>
+    <div class="list">
+      <div class="list-item" id="exercise-list">
+        {% for e in value %}
+          <div class="list-item" style="color: black;">
+            <p>{{e}}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!-- <script src="../static/javascript/output.js"></script> -->
+</body>
+
+</html>

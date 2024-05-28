@@ -1,15 +1,65 @@
-/* body {
-  font-family: "Teko";
-  src: url("teko-regular.woff2") format("woff2"),
-    url("teko-regular.woff") format("woff");
-} */
-
-body{
+body {
   height: 100vh;
   background-color: white;
 }
 
-h1 {
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: none;
+}
+
+.card.active {
+  display: block;
+}
+
+button {
+  background-color: white;
+  color: black;
+  padding: 10px 60px;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+  gap: 0.25em;
+  margin-right: 10px;
+}
+
+.form-group:last-child {
+  margin: 0;
+}
+
+.form-group > label {
+  font-weight: bold;
+}
+
+.form-group > input,
+.form-group > select {
+  border: 1px solid #333;
+  border-radius: 0.25em;
+  font-size: 1rem;
+  padding: 0.25em;
+}
+
+.step-title {
+  margin: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.multi-step-form {
+  max-width: 350px;
+}
+
+/* h1 {
   text-align: center;
   color: black;
 }
@@ -60,20 +110,4 @@ h1 {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-
-button {
-  background-color: white;
-  color: black;
-  padding: 10px 60px;
-  border: 2px solid black;
-  cursor: pointer;
-  margin-top: 50px;
-}
-
-.card {
-  display: none;
-}
-
-.card.active {
-  display: block;
-}
+*/

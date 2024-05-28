@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FITAI Landing Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Teko">
+    <link rel="stylesheet" href="../static/styles/home.css">
+    <script src="../static/javascript/home.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <form data-multi-step class="multi-step-form" action="/predict" method="post">
+            <div class="card active" data-step="1">
+                <h1 class="step-title">Personal Information</h1>
+                <!-- Gender -->
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select name="Gender" id="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <!-- Age -->
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="Age" min="12" required>
+                </div>
+                <!-- Weight -->
+                <div class="form-group">
+                    <label for="weight">Weight(kg)</label>
+                    <input type="number" id="Weight" name="Weight" min="0" required>
+                </div>
+                <!-- Height -->
+                <div class="form-group">
+                    <label for="height">Height(cm)</label>
+                    <input type="number" id="Height" name="Height" min="0" required>
+                </div>
+                <!-- Fitness Level -->
+                <div class="form-group">
+                    <label for="fitness-level">Fitness Level</label>
+                    <select name="FitnessLevel" id="FitnessLevel">
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+
+                    </select>
+                </div>
+                <!-- Exercise History -->
+                <div class="form-group">
+                    <label for="exercise-history">Exercise History</label>
+                    <select name="ExerciseHistory" id="ExerciseHistory">
+                        <option value="none">None</option>
+                        <option value="regular">Regular</option>
+                        <option value="occasional">Occasional</option>
+                    </select>
+                </div>
+                <!-- Fitness Goals -->
+                <div class="form-group">
+                    <label for="fitness-goals">Fitness Goals</label>
+                    <select name="FitnessGoals" id="FitnessGoals">
+                        <option value="weight_loss">Weight Loss</option>
+                        <option value="muscle_gain">Muscle Gain</option>
+                        <option value="endurance">Endurance</option>
+                        <option value="flexibility">Flexibility</option>
+                    </select>
+                </div>
+                <button type="button" data-next>Next</button>
+            </div>
+
+            <div class="card" data-step="2">
+                <h1 class="step-title">Medical Information</h1>
+                <!-- Medical Conditions -->
+                <div class="form-group">
+                    <label for="medical-conditions">Medical Conditions</label>
+                    <select name="MedicalConditions" id="MedicalConditions">
+                        <option value="none">None</option>
+                        <option value="hypertension">Hypertension</option>
+                        <option value="diabetes">Diabetes</option>
+                        <option value="asthma">Asthma</option>
+                        <option value="heart_disease">Heart Disease</option>
+                    </select>
+                </div>
+                <!-- Injuries -->
+                <div class="form-group">
+                    <label for="injuries">Injuries</label>
+                    <select name="Injuries" id="Injuries">
+                        <option value="none">None</option>
+                        <option value="knee_pain">Knee Pain</option>
+                        <option value="back_pain">Back Pain</option>
+                        <option value="shoulder_pain">Shoulder Pain</option>
+                        <option value="ankle_sprain">Ankle Sprain</option>
+                    </select>
+                </div>
+                <!-- Exercise Frequency -->
+                <div class="form-group">
+                    <label for="exercise-frequency">How many Days per week do you exercise?</label>
+                    <input type="text" id="ExerciseFrequency" name="ExerciseFrequency" required>
+                </div>
+                <!-- Exercise Duration -->
+                <div class="form-group">
+                    <label for="exercise-duration">Average Daily Exercise Duration(min)</label>
+                    <input type="text" id="ExerciseDuration" name="ExerciseDuration" required>
+                </div>
+                <!-- Stress Level -->
+                <div class="form-group">
+                    <label for="stress-level">Stress Level</label>
+                    <select name="StressLevel" id="StressLevel">
+                        <option value="low">Low</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <!-- Activity Level -->
+                <div class="form-group">
+                    <label for="activity-level">Activity Level</label>
+                    <select name="ActivityLevel" id="ActivityLevel">
+                        <option value="sedentary">Sedentary</option>
+                        <option value="lightly_active">Lightly Active</option>
+                        <option value="active">Active</option>
+                    </select>
+                </div>
+                <!-- Sleep Patterns -->
+                <div class="form-group">
+                    <label for="sleep-patterns">How many hours do you sleep?</label>
+                    <input type="text" id="SleepPatterns" name="SleepPatterns" required>
+                </div>
+
+                <button data-previous>Previous</button>
+                <button type="button" data-next>Next</button>
+            </div>
+
+            <div class="card" data-step="3">
+                <h1 class="step-title">Preference</h1>
+                <!-- Motivation Level -->
+                <div class="form-group">
+                    <label for="motivation-level">Motivation Level</label>
+                    <select name="MotivationLevel" id="MotivationLevel">
+                        <option value="low">Low</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sleep-patterns">PreferredTimeOfDay</label>
+                    <select name="PreferredTimeOfDay" id="PreferredTimeOfDay">
+                        <option value="morning">Morning</option>
+                        <option value="afternoon">Afternoon</option>
+                        <option value="evening">Evening</option>
+                    </select>
+                </div>
+                <!-- Dietary Preferences -->
+                <div class="form-group">
+                    <label for="dietary-preferences">Dietary Preferences</label>
+                    <select name="DietaryPreferences" id="DietaryPreferences">
+                        <option value="none">None</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="keto">Keto</option>
+                        <option value="paleo">Paleo</option>
+                    </select>
+                </div>
+                <!-- Preferred Environment -->
+                <div class="form-group">
+                    <label for="preferred-environment">Preferred Environment</label>
+                    <select name="PreferredEnvironment" id="PreferredEnvironment">
+                        <option value="gym">Gym</option>
+                        <option value="home">Home</option>
+                        <option value="outdoors">Outdoors</option>
+                    </select>
+                </div>
+                <!-- Weather Conditions -->
+                <div class="form-group">
+                    <label for="weather-conditions">Weather Conditions</label>
+                    <select name="WeatherConditions" id="WeatherConditions">
+                        <option value="sunny">Sunny</option>
+                        <option value="rainy">Rainy</option>
+                        <option value="snowy">Snowy</option>
+                        <option value="windy">Windy</option>
+                    </select>
+                </div>
+                <!-- Gym Membership -->
+                <div class="form-group">
+                    <label for="gym-membership">Gym Membership</label>
+                    <select name="GymMembership" id="GymMembership">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <!-- Support System -->
+                <div class="form-group">
+                    <label for="support-system">Support System</label>
+                    <select name="SupportSystem" id="SupportSystem">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <!-- Group Classes Preference -->
+                <div class="form-group">
+                    <label for="group-classes-preference">Group Classes Preference</label>
+                    <select name="GroupClassesPreference" id="GroupClassesPreference">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+                <button type="button" data-previous>Previous</button>
+                <button type="submit">Generate</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
